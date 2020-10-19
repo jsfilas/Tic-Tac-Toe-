@@ -1,0 +1,59 @@
+#gameboard {
+    display: grid;
+    grid-template-columns: 200px 200px 200px;
+    grid-template-rows: 200px 200px 200px;
+    margin: auto;
+    width: 50%;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.box {
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    height: 200px;
+    width: 200px;
+    border: solid 5px black;
+    text-align: center;
+    font-size: 50px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    border-radius: 5px;
+}
+
+#box0 {
+    border-left-color: transparent;
+    border-top-color: transparent;
+}
+
+#box1 {
+    border-top-color: transparent;
+}
+
+#box2 {
+    border-right-color: transparent;
+    border-top-color: transparent;
+}
+
+#box3 {
+    border-left-color: transparent;
+}
+
+#box5 {
+    border-right-color: transparent;
+}
+
+#box6 {
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+}
+
+#box7 {
+    border-bottom-color: transparent;
+}
+
+#box8 {
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+}
