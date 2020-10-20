@@ -1,7 +1,7 @@
 const gameboard = (() => {
-    const gameboard = ['','','','','','','','',''];
+    const board = ['','','','','','','','',''];
     
-    return{gameboard};
+    return{board};
 })();
 
 // Factory function for players/users
@@ -32,12 +32,12 @@ const userManagement = (() => {
         let versus = document.querySelector("#vs");
         versus.classList.remove("hidden");
 
-        p1.innerText = player1;
-        p2.innerText = player2;
+        p1.innerText = player1 + " (X)";
+        p2.innerText = player2 + " (O)";
 
         user1 = player(player1, "X");
         user2 = player(player2, "O")
-        
+        playGame.addClick();
     })
 
     restartBtn.addEventListener("click", () => {
@@ -47,6 +47,65 @@ const userManagement = (() => {
     
 })();
 
+const playGame = (() => {
+    const {board} = gameboard;
+
+    let symbol = '';
+    let winner = '';
+
+    const markSpot = (e) => {
+        const targetArrayIndex = board[`${e.target.id}`];
+        if (symbol === '') {
+            symbol = user1.symbol;
+            if (targetArrayIndex === '') {board.splice(`${e.target.id}`,1, symbol)};console.log(board);
+        } else if (symbol === user1.symbol) {
+            symbol = user2.symbol; 
+            winner = user2.name;
+            if (targetArrayIndex === '') {board.splice(`${e.target.id}`,1, symbol)}; console.log(board);
+        }else if (symbol === user2.symbol) {
+            symbol = user1.symbol; 
+            winner = user1.name;
+            if (targetArrayIndex === '') {board.splice(`${e.target.id}`,1, symbol)}; console.log(board);
+        }
+        const {renderMarks} = render;
+        renderMarks();
+        checkWinner();
+    }
+
+    function checkWinner() {
+        const announcement = document.querySelector("#announceWinner");
+        if (board[0] === board[1] && board[1] === board[2] && board[0] !== '') {removeClick(); announcement.textContent = `${winner} Wins!`; announcement.classList.remove("hidden"); symbol = ''; return;} 
+        if (board[3] === board[4] && board[4] === board[5] && board[3] !== '') {removeClick(); announcement.textContent = `${winner} Wins!`; announcement.classList.remove("hidden"); symbol = ''; return;}
+        if (board[6] === board[7] && board[7] === board[8] && board[6] !== '') {removeClick(); announcement.textContent = `${winner} Wins!`; announcement.classList.remove("hidden"); symbol = ''; return;}
+        if (board[0] === board[3] && board[3] === board[6] && board[0] !== '') {removeClick(); announcement.textContent = `${winner} Wins!`; announcement.classList.remove("hidden"); symbol = ''; return;}
+        if (board[1] === board[4] && board[4] === board[7] && board[1] !== '') {removeClick(); announcement.textContent = `${winner} Wins!`; announcement.classList.remove("hidden"); symbol = ''; return;}
+        if (board[2] === board[5] && board[5] === board[8] && board[2] !== '') {removeClick(); announcement.textContent = `${winner} Wins!`; announcement.classList.remove("hidden"); symbol = ''; return;}
+        if (board[0] === board[4] && board[4] === board[8] && board[0] !== '') {removeClick(); announcement.textContent = `${winner} Wins!`; announcement.classList.remove("hidden"); symbol = ''; return;}
+        if (board[2] === board[4] && board[4] === board[6] && board[2] !== '') {removeClick(); announcement.textContent = `${winner} Wins!`; announcement.classList.remove("hidden"); symbol = ''; return;}
+        if (board[0] !== '' && board[1] !== '' && board[2] !== '' && board[3] !== '' && board[4] !== '' && board[5] !== '' && board[6] !== '' && board[7] !== '' && board[8] !== '') {announcement.textContent = "DRAW!"};
+    }
+
+    const squares = Array.from(document.getElementsByClassName('box'));
+
+    function addClick() {
+        squares.forEach((box) => box.addEventListener('click', markSpot));
+    }
+    function removeClick() {
+        squares.forEach((box) => box.removeEventListener('click', markSpot));
+    }
+
+    return{addClick};
+})();
 
 
+const render = (() => {
+    const {board} = gameboard;
 
+    function renderMarks() {
+        for (let i=0; i < board.length; i++) {
+            const targetBox = document.getElementById(`${i}`);
+            targetBox.textContent = board[i];
+        }
+    }
+    return{renderMarks}
+})();

@@ -7,13 +7,19 @@
     padding: 5px;
 }
 
+h1 {
+    margin: auto;
+    margin-top: 35px;
+    width: 50%;
+    text-align: center;
+}
 
 form {
     display: flex;
     margin: auto;
     width: 50%;
     justify-content: center;
-    margin-top: 50px;
+    margin-top: 15px;
 }
 
 #p1, #p2 {
@@ -53,38 +59,38 @@ input, #vs{
     border-radius: 5px;
 }
 
-#box0 {
+.box0 {
     border-left-color: transparent;
     border-top-color: transparent;
 }
 
-#box1 {
+.box1 {
     border-top-color: transparent;
 }
 
-#box2 {
+.box2 {
     border-right-color: transparent;
     border-top-color: transparent;
 }
 
-#box3 {
+.box3 {
     border-left-color: transparent;
 }
 
-#box5 {
+.box5 {
     border-right-color: transparent;
 }
 
-#box6 {
+.box6 {
     border-left-color: transparent;
     border-bottom-color: transparent;
 }
 
-#box7 {
+.box7 {
     border-bottom-color: transparent;
 }
 
-#box8 {
+.box8 {
     border-right-color: transparent;
     border-bottom-color: transparent;
 }
