@@ -1,3 +1,34 @@
+#startBtn, #restartBtn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 5%;
+    text-align: center;
+    padding: 5px;
+}
+
+
+form {
+    display: flex;
+    margin: auto;
+    width: 50%;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+#p1, #p2 {
+    padding: 10px;
+}
+
+input, #vs{
+    height: 10%;
+    margin: auto;
+    margin-left: 5px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+
 #gameboard {
     display: grid;
     grid-template-columns: 200px 200px 200px;
@@ -18,7 +49,7 @@
     border: solid 5px black;
     text-align: center;
     font-size: 50px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;
     border-radius: 5px;
 }
 
@@ -56,4 +87,8 @@
 #box8 {
     border-right-color: transparent;
     border-bottom-color: transparent;
+}
+
+.hidden {
+    display: none !important;
 }

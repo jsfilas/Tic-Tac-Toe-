@@ -7,18 +7,25 @@
     </head>
     <body>
         <div id="gameboard">
-            <div id="box0" class="box">X</div>
-            <div id="box1" class="box">O</div>
+            <div id="box0" class="box"></div>
+            <div id="box1" class="box"></div>
             <div id="box2" class="box"></div>
             <div id="box3" class="box"></div>
             <div id="box4" class="box"></div>
-            <div id="box5" class="box">O</div>
+            <div id="box5" class="box"></div>
             <div id="box6" class="box"></div>
             <div id="box7" class="box"></div>
-            <div id="box8" class="box">X</div>
+            <div id="box8" class="box"></div>
         </div>
-        <button id="startBtn">Start</button>
-        <button id="restartBtn">Restart</button>
+        <form id="playerEntry">
+            <h3 id="p1">Player 1</h3>
+            <input id="player1" placeholder="Player 1 name" type="text">
+            <h4 id="vs" class="hidden">vs</h4>
+            <h3 id="p2">Player 2</h3>
+            <input id="player2" placeholder="Player 2 name" type="text">
+        </form>
+        <button id="startBtn">START</button>
+        <button id="restartBtn" class="hidden">RESTART</button>
         <script src="game.js"></script>
     </body>
 </html>
