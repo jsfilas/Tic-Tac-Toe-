@@ -1,20 +1,37 @@
+body {
+    background-color: #ecf4f3;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
 #startBtn, #restartBtn {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 5%;
+    width: 10%;
     text-align: center;
     padding: 5px;
+    border: solid 5px #ff7e67;
+    border-radius: 5px;
+    background-color:#006a71;
+    color: #ecf4f3;
 }
 
 h1 {
+    color: #006a71;
     margin: auto;
     margin-top: 35px;
     width: 50%;
     text-align: center;
 }
 
+#name {
+    color: #006a71;
+    font-size: 50px;
+}
+
 form {
+    color: #006a71;
     display: flex;
     margin: auto;
     width: 50%;
@@ -42,20 +59,21 @@ input, #vs{
     margin: auto;
     width: 50%;
     justify-content: center;
-    margin-top: 100px;
+    margin-top: 25px;
 }
 
 .box {
     display: flex; 
     align-items: center;
     justify-content: center;
-    background-color: white;
+    background-color: #ecf4f3;
     height: 200px;
     width: 200px;
-    border: solid 5px black;
+    border: solid 5px #006a71;
     text-align: center;
     font-size: 50px;
-    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+    color: #ff7e67;
+    font-family: 'Montserrat', sans-serif;
     border-radius: 5px;
 }
 

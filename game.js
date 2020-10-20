@@ -1,6 +1,5 @@
 const gameboard = (() => {
     const board = ['','','','','','','','',''];
-    
     return{board};
 })();
 
@@ -43,15 +42,19 @@ const userManagement = (() => {
     restartBtn.addEventListener("click", () => {
         location.reload();
     })
-
+   
     
 })();
+
+
 
 const playGame = (() => {
     const {board} = gameboard;
 
     let symbol = '';
     let winner = '';
+
+    
 
     const markSpot = (e) => {
         const targetArrayIndex = board[`${e.target.id}`];
