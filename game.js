@@ -85,7 +85,7 @@ const playGame = (() => {
         if (board[2] === board[5] && board[5] === board[8] && board[2] !== '') {removeClick(); announcement.textContent = `${winner} Wins!`; announcement.classList.remove("hidden"); symbol = ''; return;}
         if (board[0] === board[4] && board[4] === board[8] && board[0] !== '') {removeClick(); announcement.textContent = `${winner} Wins!`; announcement.classList.remove("hidden"); symbol = ''; return;}
         if (board[2] === board[4] && board[4] === board[6] && board[2] !== '') {removeClick(); announcement.textContent = `${winner} Wins!`; announcement.classList.remove("hidden"); symbol = ''; return;}
-        if (board[0] !== '' && board[1] !== '' && board[2] !== '' && board[3] !== '' && board[4] !== '' && board[5] !== '' && board[6] !== '' && board[7] !== '' && board[8] !== '') {announcement.textContent = "DRAW!"};
+        if (board[0] !== '' && board[1] !== '' && board[2] !== '' && board[3] !== '' && board[4] !== '' && board[5] !== '' && board[6] !== '' && board[7] !== '' && board[8] !== '') {removeClick(); announcement.textContent = "Draw!"; announcement.classList.remove("hidden"); symbol = ''; return;}
     }
 
     const squares = Array.from(document.getElementsByClassName('box'));
